@@ -29,6 +29,8 @@ After creating a best model, we need to serve it.
 
 ## Convert h5-Keras to TF model
 
+**Important:** Change variable to your best model name in convertKerasToTF.py
+
 To convert it, open CMD and `python deploy/TF_Image/convertKerasToTF.py`
 
 To check input and output of the model, open your cmd and type `saved_model_cli show --dir . --tag_set serve --signature_def serving_default > saved_model_cli.txt`
@@ -36,10 +38,12 @@ To check input and output of the model, open your cmd and type `saved_model_cli 
 Check `saved_model_cli` at `deploy/model/saved_model_cli.txt`.
 
 ## Containerize
+
 ```sh
 cd deploy/TF_Image
 docker build -t capstone1_model .
 docker run -it --rm -p 8500:8500 capstone1_model
 ```
+
 To run prediction, go to `deploy/TF_Image/test_prediction.ipynb`
 
