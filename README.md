@@ -17,3 +17,9 @@ To run `notebook.ipynb`:
 - Matplotlib
 - Scipy
 
+If you need the model, you have to run codeblocks in:
+- Library
+- Data Preparation
+- Checkpointing
+, this will create a best model.
+
