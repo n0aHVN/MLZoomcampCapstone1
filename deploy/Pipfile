@@ -4,13 +4,13 @@ verify_ssl = false
 name = "pip_conf_index_global"
 
 [packages]
-tensorflow = "*"
-numpy = "*"
+grpcio = "*"
 flask = "*"
 gunicorn = "*"
-grpcio = "*"
+keras-image-helper = "*"
+tensorflow-protobuf = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.12"
+python_version = "3.8"

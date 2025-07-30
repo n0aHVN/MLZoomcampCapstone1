@@ -1,0 +1,13 @@
+services:
+  clothing-model:
+    build:
+      dockerfile: model.dockerfile
+    image: capstone1-model
+  gateway:
+    build:
+      dockerfile: gateway.dockerfile
+    image: capstone1-gateway
+    environment:
+      - TF_SERVING_HOST=capstone1-model:8500
+    ports:
+      - "9696:9696"

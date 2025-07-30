@@ -1,4 +1,4 @@
-FROM python:3.9.21-slim
+FROM python:3.8.12-slim
 
 RUN pip install pipenv
 
@@ -6,12 +6,9 @@ WORKDIR /app
 
 COPY ["Pipfile", "Pipfile.lock", "./"]
 
+RUN pipenv install --system --deploy
 
-RUN cd /app && pipenv install --system --deploy
-
-# COPY ["gateway.py", "proto.py", "./"]
-
-COPY ["gateway.py", "./"]
+COPY ["gateway.py", "proto.py","./"]
 
 EXPOSE 9696
 
